@@ -18,6 +18,21 @@ int main()
         m=a;
         while(m>0)
         {
+    while(t--)
+    {
+        i=0;
+        y=0;
+        s=0;
+        scanf("%d%d",&a,&b);
+        if(a<b)
+        {
+            a=a+b;
+            b=a-b;
+            a=a-b;
+        }
+        m=a;
+        while(m>0)
+        {
             m=m/10;
             i++;
         }
