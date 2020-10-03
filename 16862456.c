@@ -3,6 +3,14 @@ int main()
 {
     int i,m,t,s,a,b,j,x,y,z;
     scanf("%d",&t);
+    scanf("%d",&t);
+    while(t--)
+    {
+        i=0;
+        y=0;
+        s=0;
+        scanf("%d%d",&a,&b);
+    }
     while(t--)
     {
         i=0;
