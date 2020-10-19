@@ -1,76 +1,52 @@
-#include<stdio.h>
-int main()
-{
-    int i,m,t,s,a,b,j,x,y,z;
-    scanf("%d",&t);
-    scanf("%d",&t);
-    while(t--)
-    {
-        i=0;
-        y=0;
-        s=0;
-        scanf("%d%d",&a,&b);
-    }
-    while(t--)
-    {
-        i=0;
-        y=0;
-        s=0;
-        scanf("%d%d",&a,&b);
-        if(a<b)
-        {
-            a=a+b;
-            b=a-b;
-            a=a-b;
-        }
-        int i,m,t,s,a,b,j,x,y,z;
-    scanf("%d",&t);
-    while(t--)
-    {
-        i=0;
-        y=0;
-        s=0;
-        scanf("%d%d",&a,&b);
-        if(a<b)
-        {
-            a=a+b;
-            b=a-b;
-            a=a-b;
-        }
-        m=a;
-        while(m>0)
-        {
-    while(t--)
-    {
-        i=0;
-        y=0;
-        s=0;
-        scanf("%d%d",&a,&b);
-        if(a<b)
-        {
-            a=a+b;
-            b=a-b;
-            a=a-b;
-        }
-        m=a;
-        while(m>0)
-        {
-            m=m/10;
-            i++;
-        }
-        for(j=0;j<i;j++)
-        {
-            z=(a%10+b%10)%10;
-            s=s*10+z;
-            a=a/10;
-            b=b/10;
-        }
-        while(s>0)
-        {
-            y=(y*10)+(s%10);
-            s=s/10;
-        }
-        printf("%d\n",y);
-    }
-    return 0;
-}
+// Optimized implementation of Bubble sort 
+#include <stdio.h> 
+
+void swap(int *xp, int *yp) 
+{ 
+	int temp = *xp; 
+	*xp = *yp; 
+	*yp = temp; 
+} 
+
+// An optimized version of Bubble Sort 
+void bubbleSort(int arr[], int n) 
+{ 
+int i, j; 
+bool swapped; 
+for (i = 0; i < n-1; i++) 
+{ 
+	swapped = false; 
+	for (j = 0; j < n-i-1; j++) 
+	{ 
+		if (arr[j] > arr[j+1]) 
+		{ 
+		swap(&arr[j], &arr[j+1]); 
+		swapped = true; 
+		} 
+	} 
+
+	// IF no two elements were swapped by inner loop, then break 
+	if (swapped == false) 
+		break; 
+} 
+} 
+
+/* Function to print an array */
+void printArray(int arr[], int size) 
+{ 
+	int i; 
+	for (i=0; i < size; i++) 
+		printf("%d ", arr[i]); 
+	printf("n"); 
+} 
+
+// Driver program to test above functions 
+int main() 
+{ 
+	int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
+	int n = sizeof(arr)/sizeof(arr[0]); 
+	bubbleSort(arr, n); 
+	printf("Sorted array: \n"); 
+	printArray(arr, n); 
+	return 0; 
+} 
